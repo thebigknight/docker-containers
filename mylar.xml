@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+<Beta>False</Beta>
+<Category>Downloaders: MediaApp:Books</Category>
+  <Name>Mylar</Name>
+  <Support>Personal testing, I have no idea what I'm doing!</Support>
+  <Description>
+    [h3]Mylar[/h3]Mylar is an automated Comic Book (cbr/cbz) downloader program heavily-based on the Headphones template and logic (which is also based on Sick-Beard).[br][br]
+    [b][span style=\'color: #E80000;\']Directions:[/span][/b][br]
+    [b]/config[/b] : this path is where Mylar will store it\'s configuration files.[br]
+    [b]/downloads[/b]   : this path is where Mylar will look for downloaded files.[br]
+	[b]/comics[/b]   : this path is where Mylar will store files after processing.[br]
+  </Description>
+  <Overview>
+      [h3]Mylar[/h3]Mylar is an automated Comic Book (cbr/cbz) downloader program heavily-based on the Headphones template and logic (which is also based on Sick-Beard).[
+  </Overview>
+  <Registry>https://registry.hub.docker.com/u/pinion/docker-mylar/</Registry>
+  <GitHub>https://github.com/thebigknight/docker-mylar</GitHub>
+  <Repository>thebigknight/docker-mylar</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment/>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8090</HostPort>
+        <ContainerPort>8090</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/apps/appdata/mylar</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Downloads/Comics</HostDir>
+      <ContainerDir>/downloads</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media/Comics</HostDir>
+      <ContainerDir>/comics</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8090]/</WebUI>
+  <Banner></Banner>
+  <Icon>http://i.imgur.com/F3mxSf5.png</Icon>
+</Container>
